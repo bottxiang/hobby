@@ -1,3 +1,19 @@
 language: go
 go:
- - 1.16.3
+    - 1.16.3
+env:
+    - GO111MODULE=on
+install:
+    - go get
+before_deploy:
+    make build-all
+deploy:
+    provider: release
+    api_key:
+        secure: AAAAB3NzaC1yc2EAAAADAQABAAABgQDBY4dY5GonY5fOnW3LPOnph5SegCKA/le1lqr6rYrcAM4e4SwD5HcZv9g9TTltxZJna8e2B3hdNZm2IwvRrVqV9wnJijLaxpVR1PJSHLCHDyS8fzS30x9WYM91GbFCWDMUvxvg3MyWOLSSJyL3AhBOWQ7MkGHOrU/Huj1LjyaYYS9CPE3adDMA/vSZva3vfIFLUqCGp8YG8JpJuoP4SivefRKp3QoJ1rX+G/yd9RGbVSMKOvRO/EUCSeW6baWzGrqGy7gkSFQHeFHK6XrhULwwYikT2NsboTwGaFYPZzzpCFPIoNfFqGCUfCVMwqBUgV9IjP8tVFfBwxoJ/HLqEto9eDlxZTV5WcK1MbMYBPt64mKqLb3GW4FisqAatOjjDg45kPZW8Edn8XNXgPnKY5T4Iv0ptdK8cc4URpVjreXiH9tLzpchgZuN/4eSF/Jix7mNc7IPXWEK1JipeH6dOlPMxoCV/VH1nXx1cM9oTi4ng2p4mPmCBDXVj8xPQlMains=
+    file_glob: true
+    file: bin/*
+    skip_cleanup: true
+    on:
+        repo: bottxiang/hobby
+        tags: true
