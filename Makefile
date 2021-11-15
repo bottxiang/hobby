@@ -14,6 +14,6 @@ build-win:
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-win.exe
 # 全平台
 build-all:
-make build
-make build-win
-make build-linux
+    make build
+    make build-win
+    make build-linux
