@@ -4,7 +4,7 @@ go:
 env:
     - GO111MODULE=on
 install:
-    - go get
+#    - go get
 before_deploy:
     make build-all
 deploy:
