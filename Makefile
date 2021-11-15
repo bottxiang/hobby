@@ -5,15 +5,15 @@ NAME=hobby
 
 #mac
 build:
-    CGO_ENABLED=0 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-mac
+	CGO_ENABLED=0 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-mac
 # windows
 build-linux:
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-linux
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-linux
 # linux
 build-win:
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-win.exe
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)/$(NAME)-win.exe
 # 全平台
 build-all:
-    make build
-    make build-win
-    make build-linux
+	make build
+	make build-win
+	make build-linux
