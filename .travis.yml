@@ -9,7 +9,7 @@ before_deploy:
     make build-all
 deploy:
     provider: release
-    api_key: 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
+    api_key: $GH_TOKEN
     file_glob: true
     file: bin/*
     skip_cleanup: true
